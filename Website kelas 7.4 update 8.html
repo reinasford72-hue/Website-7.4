@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kelas 7.4 — SMPN 255 Jakarta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{--deep:#0f4c63;--sea:#4fb3bf}
+*{box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
+body{
+  margin:0;color:#123;overflow-x:hidden;
+  background:linear-gradient(to bottom,#ffb347 0%,#ff9a3c 22%,#ffd27d 38%,#4fc3f7 58%,#26c6da 78%,#01579b 100%)
+}
+
+/* ===== DEKOR ===== */
+.sun{
+  position:fixed;top:60px;right:60px;width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#fffde7 0%,#ffe082 40%,#ff9800 70%);
+  box-shadow:0 0 150px 80px rgba(255,183,77,.9);z-index:0
+}
+
+.bird{
+  position:fixed;top:120px;width:28px;height:14px;
+  border-top:3px solid rgba(0,0,0,.65);
+  border-radius:50% 50% 0 0;
+  animation:fly 30s linear infinite
+}
+.bird::before,.bird::after{
+  content:"";position:absolute;top:-3px;width:14px;height:14px;
+  border-top:3px solid rgba(0,0,0,.65);
+  border-radius:50% 50% 0 0
+}
+.bird::before{left:-14px}
+.bird::after{right:-14px}
+.bird.b2{top:150px;animation-duration:34s}
+.bird.b3{top:180px;animation-duration:38s}
+@keyframes fly{from{left:-30%}to{left:120%}}
+
+/* ===== HEADER ===== */
+header{
+  background:linear-gradient(90deg,var(--deep),var(--sea));
+  padding:30px;
+  display:flex;
+  gap:25px;
+  align-items:center;
+  color:white;
+  position:relative;
+  z-index:1
+}
+
+.logo{
+  width:120px;height:120px;border-radius:50%;
+  background:linear-gradient(135deg,#ffecb3,#b2ebf2,#80deea);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  flex-shrink:0
+}
+
+/* ===== MAIN ===== */
+main{max-width:1200px;margin:40px auto;padding:20px;position:relative;z-index:1}
+section{
+  background:white;padding:25px;border-radius:18px;margin-bottom:30px;
+  box-shadow:0 12px 28px rgba(0,0,0,.15)
+}
+h2{color:var(--deep);margin-top:0}
+
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+th,td{padding:10px;border-bottom:1px solid #ddd}
+th{background:var(--sea);color:white}
+tr:nth-child(even){background:#f0fbff}
+
+.btn{
+  padding:6px 14px;border-radius:20px;
+  background:linear-gradient(135deg,#c9f0ff,#6ecfff);
+  color:#034;font-weight:600;font-size:12px;
+  display:inline-flex;gap:6px;text-decoration:none
+}
+.star{color:#f7b500;font-weight:900}
+
+/* ===== WAVES ===== */
+.waves{
+  position:fixed;bottom:0;left:0;right:0;height:240px;
+  background:linear-gradient(to top,#013c6b,#0288d1,#4fc3f7);
+  overflow:hidden;z-index:0
+}
+.wave{
+  position:absolute;bottom:0;width:200%;height:150px;
+  background:rgba(255,255,255,.35);
+  border-radius:100% 100% 0 0;
+  animation:wave 14s linear infinite
+}
+.wave.w2{opacity:.25;bottom:40px;animation-duration:20s}
+.wave.w3{opacity:.18;bottom:80px;animation-duration:26s}
+@keyframes wave{from{left:0}to{left:-50%}}
+
+/* ===== AUDIO ===== */
+.audio-btn{
+  position:fixed;bottom:20px;left:20px;
+  background:linear-gradient(135deg,#6ecfff,#c9f0ff);
+  border:none;border-radius:50px;
+  padding:14px 18px;font-size:18px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  z-index:2
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--deep);
+  color:white;
+  text-align:center;
+  padding:35px 20px;
+  position:relative;
+  z-index:1
+}
+.ig-kelas{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 30px;margin-top:20px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#fd1d1d,#f56040,#bc2a8d);
+  color:white;font-weight:800;
+  text-decoration:none
+}
+
+/* ===== RESPONSIVE HP ===== */
+@media(max-width:768px){
+  header{flex-direction:column;text-align:center;padding:18px 14px}
+  .logo{width:85px;height:85px}
+  header h1{font-size:22px;margin:8px 0 2px}
+  header p{font-size:14px;margin:2px 0}
+  .sun{width:110px;height:110px;right:20px;top:40px}
+  table{min-width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<div class="sun"></div>
+<div class="bird"></div>
+<div class="bird b2"></div>
+<div class="bird b3"></div>
+
+<header>
+  <div class="logo">
+    <svg width="90" height="90" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="55" fill="#e0f7fa" stroke="#01579b" stroke-width="4"/>
+      <text x="60" y="78" text-anchor="middle" font-size="48" font-weight="900" fill="#01579b">7.4</text>
+    </svg>
+  </div>
+  <div>
+    <h1>Kelas 7.4</h1>
+    <p><b>SMP Negeri 255 Jakarta</b></p>
+    <p>Tahun Ajaran 2025 / 2026</p>
+  </div>
+</header>
+
+<main>
+  <section>
+<h2>Struktur Kelas</h2>
+<div class="table-wrap"><table>
+<tr><th>Jabatan</th><th>Nama</th><th>Kontak</th></tr>
+<tr><td>Wali Kelas</td><td>Ibu Lani</td><td><a class="btn" href="tel:081401725748">📞 0814‑0172‑5748</a> <a class="btn" href="https://instagram.com/lani_dove" target="_blank">📸 @lani_dove</a></td></tr>
+<tr><td>Ketua</td><td>Shaqila Azzahra <span class="star">★</span></td><td><a class="btn" href="tel:085211229481">📞 0852‑1122‑9481</a> <a class="btn" href="https://instagram.com/shaqila_azhr" target="_blank">📸 @shaqila_azhr</a></td></tr>
+<tr>
+  <td>Wakil</td>
+  <td>Aliyah Oktaviani</td>
+  <td>
+    <a class="btn" href="tel:087852478495">📞 0878-5247-8495</a>
+    <a class="btn" href="https://www.instagram.com/aliyhoktv_?igsh=ZTlnejYxanowcWR1" target="_blank">
+      📸 @aliyhoktv_
+    </a>
+  </td>
+</tr>
+
+<tr><td>Sekretaris</td><td>Taneza Kimora Pandjaitan</td><td><a class="btn" href="tel:081284055549">📞 0812‑8405‑5549</a> <a class="btn" href="https://instagram.com/kimora_lyubit_astronomiyu" target="_blank">📸 @kimora_lyubit_astronomiyu</a></td></tr>
+<tr><td>Keamanan</td><td>Ahmad Abdillah M.D</td><td><a class="btn" href="tel:082211950412">📞 0822‑1195‑0412</a></td></tr>
+</table></div>
+</section>
+
+<section>
+<h2>Jadwal Pelajaran</h2>
+<div class="table-wrap"><table>
+<tr><th>Hari</th><th>Mata Pelajaran</th></tr>
+<tr><td>Senin</td><td>Bahasa Inggris, Agama, IPA</td></tr>
+<tr><td>Selasa</td><td>IPS, Matematika, Bahasa Inggris, Bahasa Indonesia</td></tr>
+<tr><td>Rabu</td><td>Matematika, PPKn, Seni Budaya</td></tr>
+<tr><td>Kamis</td><td>Bahasa Indonesia, IPS, BK, PJOK</td></tr>
+<tr><td>Jumat</td><td>Informatika, IPA, Bahasa Inggris</td></tr>
+</table></div>
+</section>
+
+<section>
+<h2>Jadwal Piket</h2>
+<div class="table-wrap"><table>
+<tr><th>Hari</th><th>Nama</th></tr>
+<tr><td>Senin</td><td>Alya, Adam, Agatha, Dzaki, Aliyah, Aini, Zain</td></tr>
+<tr><td>Selasa</td><td>Ariansyah, Amelia, Alysya, Arzachel, Athaya, Rizzy, Raqilla</td></tr>
+<tr><td>Rabu</td><td>Justin, Chalizta, Gwen, Joevira, Junior, Fransina, Kimora</td></tr>
+<tr><td>Kamis</td><td>Arine, Bisma, Wahyu, Nanjiwa, Qiromi, Mahangga</td></tr>
+<tr><td>Jumat</td><td>Sekar, Satrio, Irsyad, Labib, Shaqila, Sheila, Syifah</td></tr>
+</table></div>
+</section>
+
+<section>
+<h2>Penanggung Jawab Mata Pelajaran</h2>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Mata Pelajaran</th>
+<th>Penanggung Jawab</th>
+<th>Kontak (WA)</th>
+</tr>
+
+<tr>
+<td>Bahasa Inggris</td>
+<td>Sekaring Hapsari Anindita</td>
+<td><a class="btn" href="https://wa.me/6282260166463" target="_blank">📞 0822-6016-6463</a></td>
+</tr>
+
+<tr>
+<td>Agama</td>
+<td>Amelia Naffa Azzahra</td>
+<td><a class="btn" href="https://wa.me/6285893077823" target="_blank">📞 0858-9307-7823</a></td>
+</tr>
+
+<tr>
+<td>IPA</td>
+<td>Alya Azzahra</td>
+<td><a class="btn" href="https://wa.me/6282210028363" target="_blank">📞 0822-1002-8363</a></td>
+</tr>
+
+<tr>
+<td>IPS</td>
+<td>Syarah As Syifah</td>
+<td><a class="btn" href="https://wa.me/62881012213137" target="_blank">📞 0881-0122-13137</a></td>
+</tr>
+
+<tr>
+<td>Matematika</td>
+<td>Gwyneth Aqilla</td>
+<td><a class="btn" href="https://wa.me/6281931231227" target="_blank">📞 0819-3123-1227</a></td>
+</tr>
+
+<tr>
+<td>Bahasa Indonesia</td>
+<td>Aini Ester Nessia</td>
+<td><a class="btn" href="https://wa.me/6288292111546" target="_blank">📞 0882-9211-1546</a></td>
+</tr>
+
+<tr>
+<td>PPKN</td>
+<td>Taneza Kimora Pandjaitan</td>
+<td><a class="btn" href="https://wa.me/6281284055549" target="_blank">📞 0812-8405-5549</a></td>
+</tr>
+
+<tr>
+<td>Seni Budaya</td>
+<td>Chalizta Syalova Farizi</td>
+<td><a class="btn" href="https://wa.me/62881025418750" target="_blank">📞 0881-0254-18750</a></td>
+</tr>
+
+<tr>
+<td>BK</td>
+<td>Justin Faith Shalom</td>
+<td><a class="btn" href="https://wa.me/6282112228012" target="_blank">📞 0821-1222-8012</a></td>
+</tr>
+
+<tr>
+<td>PJOK</td>
+<td>Ariansyah</td>
+<td><a class="btn" href="https://wa.me/6289668772500" target="_blank">📞 0896-6877-2500</a></td>
+</tr>
+
+<tr>
+<td>PJOK</td>
+<td>Junior Jahuda Saputra Manu</td>
+<td><a class="btn" href="https://wa.me/6282212355170" target="_blank">📞 0822-1235-5170</a></td>
+</tr>
+
+<tr>
+<td>Informatika</td>
+<td>Riyani Dara Ayu</td>
+<td><a class="btn" href="https://wa.me/6281521751024" target="_blank">📞 0815-2175-1024</a></td>
+</tr>
+
+</table>
+</div>
+</section>
+
+<section>
+<h2>Daftar Siswa & Ekstrakurikuler</h2>
+<div class="table-wrap"><table>
+<tr><th>No</th><th>Nama</th><th>Ekstrakurikuler</th></tr>
+<tr><td>1</td><td>Adam Yusuf Adrian</td><td>Basket, Futsal</td></tr>
+<tr><td>2</td><td>Agatha Caroline Siringoringo <span class="star">★</span> <a class="btn" href="https://instagram.com/agatharingoo" target="_blank">📸 @agatharingoo</a></td><td>Paskibra</td></tr>
+<tr><td>3</td><td>Ahmad Abdillah M.D</td><td>Futsal</td></tr>
+<tr><td>4</td><td>Aini Ester N</td><td>Basket, Rohani Kristen</td></tr>
+<tr><td>5</td><td>Aliyah Oktaviani</td><td>PMR</td></tr>
+<tr><td>6</td><td>Alya Azzahra</td><td>Pramuka, PERS</td></tr>
+<tr><td>7</td><td>Alysya Shamira P.P</td><td>Tatra, Pramuka</td></tr>
+<tr><td>8</td><td>Amelia Naffa A</td><td>Rohani Islam</td></tr>
+<tr><td>9</td><td>Ariansyah</td><td>Paskibra</td></tr>
+<tr><td>10</td><td>Arzachel Azzam R</td><td>-</td></tr>
+<tr><td>11</td><td>Athaya Khanza R</td><td>English Club, Rohani Islam</td></tr>
+<tr><td>12</td><td>Chalizta Syalova F</td><td>Pramuka, Paskibra</td></tr>
+<tr><td>13</td><td>Fransina Vanesia R</td><td>PMR</td></tr>
+<tr><td>14</td><td>Gwyneth Aqilla</td><td>Basket, Pramuka</td></tr>
+<tr><td>15</td><td>Joevira V.R</td><td>KIR</td></tr>
+<tr><td>16</td><td>Junior Jahuda S.M</td><td>Futsal, Atletik</td></tr>
+<tr><td>17</td><td>Justin Faith Shalom</td><td>Basket</td></tr>
+<tr><td>18</td><td>Mahangga Aqil Padang</td><td>Silat, Basket</td></tr>
+<tr><td>19</td><td>Muhammad Bisma S</td><td>Futsal, Marawis</td></tr>
+<tr><td>20</td><td>Muhammad Haidar S.I</td><td>Basket</td></tr>
+<tr><td>21</td><td>Muhammad Labib M <span class="star">★</span></td><td>Coding, Marawis</td></tr>
+<tr><td>22</td><td>Muhammad Satrio P.W</td><td>Paskibra, Coding</td></tr>
+<tr><td>23</td><td>Muhammad Wahyu N.K</td><td>Futsal, Basket</td></tr>
+<tr><td>24</td><td>Muhammad Zain A.G</td><td>Marawis</td></tr>
+<tr><td>25</td><td>Nanjiwa Annasuha A</td><td>PMR</td></tr>
+<tr><td>26</td><td>Qiromi Arifvia</td><td>PERS</td></tr>
+<tr><td>27</td><td>Raqilla Putrana H</td><td>Coding</td></tr>
+<tr><td>28</td><td>Riyani Dara Ayu</td><td>Pramuka</td></tr>
+<tr><td>29</td><td>Rizzy Habrizi</td><td>-</td></tr>
+<tr><td>30</td><td>Sekaring Hapsari A</td><td>PMR</td></tr>
+<tr><td>31</td><td>Shaqila Azzahra <span class="star">★</span></td><td>Paskibra</td></tr>
+<tr><td>32</td><td>Sheilla Putri K</td><td>PMR, Pramuka</td></tr>
+<tr><td>33</td><td>Syarah As Syifah</td><td>Paskibra</td></tr>
+<tr><td>34</td><td>Taneza Kimora Pandjaitan</td><td>Basket</td></tr>
+</table></div>
+</section>
+</main>
+
+<footer>
+<p>Dibuat oleh <b>Muhammad Labib</b></p>
+<p>Dibantu oleh <b>Agatha Caroline</b> & <b>Shaqila Azzahra</b></p>
+<a class="ig-kelas" href="https://www.instagram.com/sevennnpatroll/" target="_blank">📸 Instagram Kelas 7.4 ✨</a>
+<p style="margin-top:20px">© 2025 Kelas 7.4</p>
+</footer>
+
+<div class="waves">
+  <div class="wave"></div>
+  <div class="wave w2"></div>
+  <div class="wave w3"></div>
+</div>
+
+<audio id="laut" preload="auto" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3d9b36c0c2.mp3">
+</audio>
+
+<button class="audio-btn" onclick="toggleAudio()">🌊</button>
+
+<script>
+const audio=document.getElementById('laut');
+audio.volume=0.7;
+function toggleAudio(){
+  audio.paused ? audio.play() : audio.pause();
+}
+</script>
+
+</body>
+</html>
